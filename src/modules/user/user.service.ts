@@ -8,9 +8,14 @@ import { CreateUserDto } from "./dto/create-user.dto";
 export class UserService {
     constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
+    async get () {
+        const users = await this.userModel.find();
+        return users;
+    }
+
     async create(createUserDto: CreateUserDto): Promise<User> {
-        const createdCat = new this.userModel(createUserDto);
-        return createdCat.save();
+        const createdUser = new this.userModel(createUserDto);
+        return createdUser.save();
     }
 
     async findAll(): Promise<User[]> {

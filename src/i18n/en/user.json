@@ -1,0 +1,7 @@
+{
+    "not_found": "User not found",
+    "not_found_reason": "User data with the name '{username}' was not found",
+
+    "created": "User successfully created",
+    "found": "User successfully founded"
+}

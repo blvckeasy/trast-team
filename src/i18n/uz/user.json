@@ -1,0 +1,7 @@
+{
+    "not_found": "Foydalanuvchi topilmadi",
+    "not_found_reason": "Kiritilgan '{username}' nomidagi foydalanuvchi ma'lumotlari topilmadi",
+
+    "created": "Muvoffaqiyatli yaratildi",
+    "found": "Foydalanuvchi muvaffaqiyatli topildi"
+}

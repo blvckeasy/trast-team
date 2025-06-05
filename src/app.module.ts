@@ -7,6 +7,8 @@ import { AuthService } from "./modules/auth/auth.service";
 import { AuthModule } from "./modules/auth/auth.module";
 import { AcceptLanguageResolver, I18nModule, QueryResolver } from "nestjs-i18n";
 import { join } from "path";
+import { CacheModule } from "@nestjs/cache-manager";
+import { JwtService } from "@nestjs/jwt";
 
 @Module({
     imports: [
@@ -22,10 +24,11 @@ import { join } from "path";
             ],
         }),
         MongooseModule.forRoot("mongodb://localhost/trast-team"),
+        CacheModule.register({ isGlobal: true }),
         AuthModule,
         UserModule,
     ],
     controllers: [UserController, AuthController],
-    providers: [AuthService],
+    providers: [AuthService, JwtService],
 })
 export class AppModule {}
